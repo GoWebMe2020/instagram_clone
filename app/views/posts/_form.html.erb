@@ -21,6 +21,20 @@
     <%= form.file_field :image %>
   </div>
 
+  <div class="field">
+    <!-- <%= form.label :user_id %> -->
+    <label for="post_user_id">User ID</label>
+    <!-- <%= form.text_field :user_id %> -->
+    <input type="hidden" name="post[user_id]" id="post_user_id" value="<%= current_user.id %>">
+  </div>
+
+  <div class="field">
+    <!-- <%= form.label :author %> -->
+    <label for="post_author">Username</label>
+    <!-- <%= form.text_field :author %> -->
+    <input type="hidden" name="post[author]" id="post_author" value="<%= current_user.email.split('@')[0].capitalize %>">
+  </div>
+
   <div class="actions">
     <%= form.submit %>
   </div>
